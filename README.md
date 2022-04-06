@@ -67,6 +67,7 @@ Then, we enter the sip.conf and we enter the information about our phone:
 nano sip.conf
 
 ex:
+ 
  [gs2]
  type=friend
  secret=admin
