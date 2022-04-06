@@ -46,14 +46,14 @@ Then we use the kvm command to put the downloaded debian image in the previously
 
 After that, we launch the virtual machine and configure it first:
 
-ex: kvm -m 1000 -hda debian-journet-sebastiani.qcow2 -net nic,macaddr=42:AA:AA:AA:AA:AA -net vde,sock=/var/run/vde2/kvmtap0.ctl -k fr
+       ex: kvm -m 1000 -hda debian-journet-sebastiani.qcow2 -net nic,macaddr=42:AA:AA:AA:AA:AA -net vde,sock=/var/run/vde2/kvmtap0.ctl -k fr
 
 (To make it easier to configure everything on the machine, we will connect with the root)
 
 
 To be sure to find the same machine with the right configurations to be able to resume later at the right place, we transfer a copy of our virtual machine on thorin:
 
-ex: scp debian-journet-sebastiani.qcow2 nom@thorin:debian-journet-sebastiani.qcow2
+       ex: scp debian-journet-sebastiani.qcow2 nom@thorin:debian-journet-sebastiani.qcow2
 
 ###### Phones configuration
 
