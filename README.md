@@ -23,7 +23,7 @@ We used two different phones for this project. 1 Aastra 6757i and 1 Grandstream 
 https://www.officeeasy.fr/aastra-6757i-reconditionne.html 
 https://www.officeeasy.fr/grandstream-gxv3140.html
 
-## Our IP Adresses
+#### Our IP Adresses
 
 We initialize the IP Addresses of each phone such that:
      GrandStream: 10.33.105.127
