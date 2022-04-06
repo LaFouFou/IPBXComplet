@@ -16,6 +16,7 @@ The goal is to strengthen communication between the employees or the people livi
   	- [Configuring the SIP Trunk](#configuring-the-sip-trunk)
  		- [Step 1](#step-1)
  		- [Step 2](#step-2)
+ 		- [Step 3](#step-3)
 
 ## Starting materials
 
@@ -168,4 +169,23 @@ Server - add the client definition :
 
 We can check that everything went well by entering the command sip show peers to list the peers and sip show registry.
 
+#### Step 3
 
+To sum up, we have server A with one user and server B with another user.
+Both servers communicate with each other by bundles. For the moment, we can only call locally.
+We are now going to configure the long distance calls.
+
+From server A :  add in extension.conf : 
+
+       exten => 501,1,Dial(SIP/faisceau/501) 
+
+Check if A can call B, if the call doesn’t work, correct all the errors.
+
+
+On server B :  add in extension.conf :
+
+       exten => _5XX,1,Dial(SIP/faisceau/${exten})
+       
+Check if B can call A, the terms 5XX permit to contact all the subscribers of server A with a phone number with 3 digits, and starting with 5.
+
+You have set-up a SIP Trunk, congratulations !!
