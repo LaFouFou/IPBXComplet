@@ -8,6 +8,7 @@
  - [IP Addresses](#our-ip-adresses)
  - [Virtual machines configuration](#virtual-machines-configuration)
  - [Phones configuration](#phones-configuration)
+ - [About the SIP Trunk](#what-is-a-sip-trunk)
 
 ### Starting materials :
 
@@ -98,3 +99,54 @@ After setting up everything we go to the asterisk command:
 Then we call our phone:
        
        console dial NUMBER
+       
+You can also see the status of the communication channels by typing (still in asterisk):
+    
+       sip show peers
+
+####### What is a SIP trunk ? 
+
+SIP, which stands for Session Initiation Protocol, is an IP standard established by the Internet Engineering Task Force (IETF). A standard essentially dictating how a communication session is established and how it is terminated, initiating the connection between IP addresses.
+
+SIP users no longer manage two separate networks for voice and data communications, they all go through the same channel. SIP is one of the most widely used protocols in VoIP systems.
+
+
+
+How does SIP Trunk work ? 
+
+See this diagram to better understand how the SIP Trunk works:
+https://www.ringcentral.com/fr/fr/blog/wp-content/uploads/2021/11/SIP-Trunk.jpg
+
+
+
+Configuring the SIP Trunk :
+ 
+The configuration is done in several steps:
+
+Step 1: 
+First you have to edit the sip.conf file located in this directory /etc/asterisk/sip.conf
+This first step will consist in creating and configuring the users
+
+
+Client - Look for the line: OUTBOUND SIP REGISTRATIONS
+
+Add: register => faisceau:tux@10.33.XXX.12
+
+
+Step 2: 
+Server - add the client definition :
+
+[faisceau] 
+type=friend ; Defines the type of calls : peer for outgoing calls / user for incoming calls / friend for both.
+
+secret=tux ; Password for the trunk.
+
+context=local ; Name of the context for the trunk in sip.conf
+
+host=dynamic ; Name of the SIP server of the trunk.
+
+insecure=port,prompt
+
+
+We can check that everything went well by entering the command sip show peers to list the peers and sip show registry.
+
