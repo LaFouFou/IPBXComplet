@@ -74,17 +74,23 @@ ex:
 To be able to call with the phones we need to add an instruction to extensions.conf:
 
 We are looking for the line  [default] (with CTRL+W)
+       
        exten => 501,1,Dial(SIP/gs2,42)
 
 
 To be able to call then we need to go to the modules.conf file:
 
-We change the line: noload => chan_oss.so
+We change the line: 
+
+       noload => chan_oss.so
+       
 with : 
+       
        load => chan_oss.so
 
 
 After setting up everything we go to the asterisk command:
+       
        asterisk -rvvvvv
 
 
