@@ -8,7 +8,7 @@
  - [IP Addresses](#our-ip-adresses)
  - [Virtual machines configuration](#virtual-machines-configuration)
  - [Phones configuration](#phones-configuration)
- - [About the SIP Trunk](#what-is-a-sip-trunk)
+ - [About the SIP Trunk](#what-is-a-sip-trunk-?)
 
 ## Starting materials :
 
