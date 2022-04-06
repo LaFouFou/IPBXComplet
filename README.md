@@ -23,11 +23,13 @@ We used two different phones for this project. 1 Aastra 6757i and 1 Grandstream 
 https://www.officeeasy.fr/aastra-6757i-reconditionne.html 
 https://www.officeeasy.fr/grandstream-gxv3140.html
 
+
 #### Our IP Adresses
 
 We initialize the IP Addresses of each phone such that:
      GrandStream: 10.33.105.127
      Aastra: 10.33.105.121
+
 
 ##### Virtual machines configuration
 
@@ -54,6 +56,7 @@ After that, we launch the virtual machine and configure it first:
 To be sure to find the same machine with the right configurations to be able to resume later at the right place, we transfer a copy of our virtual machine on thorin:
 
        ex: scp debian-journet-sebastiani.qcow2 nom@thorin:debian-journet-sebastiani.qcow2
+
 
 ###### Phones configuration
 
