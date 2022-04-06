@@ -36,7 +36,7 @@ First step:
 
 We first installed a debian image, then we created a hard disk image with the command:
 
-ex: qemu-img create -f qcow2 debian-journet-sebastiani.qcow2 4G
+       ex: qemu-img create -f qcow2 debian-journet-sebastiani.qcow2 4G
 
 
 Then we use the kvm command to put the downloaded debian image in the previously created hard disk:
