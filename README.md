@@ -8,7 +8,7 @@
  - [IP Addresses](#our-ip-adresses)
  - [Virtual machines configuration](#virtual-machines-configuration)
  - [Phones configuration](#phones-configuration)
- - [About the SIP Trunk](#what-is-a-sip-trunk-)
+ - [About the SIP Trunk](#second-task-%C3%A0-the-sip-trunk)
 
 ## Starting materials :
 
@@ -104,7 +104,9 @@ You can also see the status of the communication channels by typing (still in as
     
        sip show peers
 
-## What is a SIP Trunk ?
+## Second task, the SIP Trunk
+
+What is a SIP Trunk ?
 
 SIP, which stands for Session Initiation Protocol, is an IP standard established by the Internet Engineering Task Force (IETF). A standard essentially dictating how a communication session is established and how it is terminated, initiating the connection between IP addresses.
 
