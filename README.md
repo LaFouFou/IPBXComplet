@@ -96,4 +96,5 @@ After setting up everything we go to the asterisk command:
 
 
 Then we call our phone:
+       
        console dial NUMBER
