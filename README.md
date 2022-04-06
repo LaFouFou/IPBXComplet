@@ -1,6 +1,9 @@
 # IPBXComplet
 
+Our project consists in developing communication links between Grandstream and Aastra Asterisk phones (see section : “Starting materials”).
+In a real situation, we could recreate it in a company or in a building requiring a telephone installation in different floors or rooms of the infrastructure.
 
+The goal is to strengthen communication between the employees or the people living inside the building with a simple and reliable setting up. 
 
 ## Summary
 
@@ -8,9 +11,13 @@
  - [IP Addresses](#our-ip-adresses)
  - [Virtual machines configuration](#virtual-machines-configuration)
  - [Phones configuration](#phones-configuration)
- - [About the SIP Trunk](#second-task-%C3%A0-the-sip-trunk)
+ - [About the SIP Trunk](#second-task-the-sip-trunk)
+  	- [What is a SIP Trunk ?](#what-is-a-sip-trunk-)
+  	- [Configuring the SIP Trunk](#configuring-the-sip-trunk)
+ 		- [Step 1](#step-1)
+ 		- [Step 2](#step-2)
 
-## Starting materials :
+## Starting materials
 
 We used two different phones for this project. 1 Aastra 6757i and 1 Grandstream GXV3140.
 
@@ -54,6 +61,10 @@ To be sure to find the same machine with the right configurations to be able to 
 
 
 ## Phones configuration
+
+       Numéro du serveur 1 : 701
+
+       Numéro serveur 2 : 501
 
 Now to configure the phones and to be able to do the other objectives we need asterisk on the machine:
 apt-get install asterisk
@@ -104,51 +115,57 @@ You can also see the status of the communication channels by typing (still in as
     
        sip show peers
 
-## Second task, the SIP Trunk
+## Second task the SIP Trunk
 
-What is a SIP Trunk ?
+#### What is a SIP Trunk ?
+
 
 SIP, which stands for Session Initiation Protocol, is an IP standard established by the Internet Engineering Task Force (IETF). A standard essentially dictating how a communication session is established and how it is terminated, initiating the connection between IP addresses.
+
 
 SIP users no longer manage two separate networks for voice and data communications, they all go through the same channel. SIP is one of the most widely used protocols in VoIP systems.
 
 
+#### How does SIP Trunk work ? 
 
-How does SIP Trunk work ? 
 
 See this diagram to better understand how the SIP Trunk works:
-https://www.ringcentral.com/fr/fr/blog/wp-content/uploads/2021/11/SIP-Trunk.jpg
+
+![alt tag](https://www.ringcentral.com/fr/fr/blog/wp-content/uploads/2021/11/SIP-Trunk.jpg)
 
 
 
-Configuring the SIP Trunk :
+### Configuring the SIP Trunk
  
 The configuration is done in several steps:
 
-Step 1: 
+#### Step 1
+
 First you have to edit the sip.conf file located in this directory /etc/asterisk/sip.conf
 This first step will consist in creating and configuring the users
 
 
-Client - Look for the line: OUTBOUND SIP REGISTRATIONS
+Client - Look for the line: 
 
-Add: register => faisceau:tux@10.33.XXX.12
+       OUTBOUND SIP REGISTRATIONS
+
+Add: 
+
+       register => faisceau:tux@10.33.XXX.12
 
 
-Step 2: 
+#### Step 2
+
 Server - add the client definition :
 
-[faisceau] 
-type=friend ; Defines the type of calls : peer for outgoing calls / user for incoming calls / friend for both.
-
-secret=tux ; Password for the trunk.
-
-context=local ; Name of the context for the trunk in sip.conf
-
-host=dynamic ; Name of the SIP server of the trunk.
-
-insecure=port,prompt
+       [faisceau]
+       type=friend ; Defines the type of calls : peer for outgoing calls / user for incoming calls / friend for both.
+       secret=tux ; Password for the trunk.
+       context=local ; Name of the context for the trunk in sip.conf
+       host=dynamic ; Name of the SIP server of the trunk.
+       insecure=port,prompt
 
 
 We can check that everything went well by entering the command sip show peers to list the peers and sip show registry.
+
 
