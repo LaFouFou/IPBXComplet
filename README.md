@@ -104,7 +104,7 @@ You can also see the status of the communication channels by typing (still in as
     
        sip show peers
 
-## Second task, the SIP Trunk
+## Second task, the SIP Trunk
 
 What is a SIP Trunk ?
 
