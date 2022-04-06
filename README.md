@@ -62,9 +62,9 @@ To be sure to find the same machine with the right configurations to be able to 
 
 ## Phones configuration
 
-       Numéro du serveur 1 : 701
+       server 1 number : 701
 
-       Numéro serveur 2 : 501
+       server 2 number : 501
 
 Now to configure the phones and to be able to do the other objectives we need asterisk on the machine:
 apt-get install asterisk
