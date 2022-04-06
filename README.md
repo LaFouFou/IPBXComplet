@@ -71,11 +71,11 @@ nano sip.conf
 
 ex:
  
- [gs2]
- type=friend
- secret=admin
- host=dynamic
- context=default
+       [gs2]
+       type=friend
+       secret=admin
+       host=dynamic
+       context=default
 
 
 To be able to call with the phones we need to add an instruction to extensions.conf:
