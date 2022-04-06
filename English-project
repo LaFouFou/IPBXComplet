@@ -1,0 +1,38 @@
+Starting materials :
+
+We used two different phones for this project. 1 Aastra 6757i and 1 Grandstream GXV3140.
+
+https://www.officeeasy.fr/aastra-6757i-reconditionne.html 
+https://www.officeeasy.fr/grandstream-gxv3140.html
+
+We initialize the IP Addresses of each phone such that:
+     GrandStream: 10.33.105.127
+     Aastra: 10.33.105.121
+
+
+First step:
+
+We first installed a debian image, then we created a hard disk image with the command:
+
+ex: qemu-img create -f qcow2 debian-journet-sebastiani.qcow2 4G
+
+
+Then we use the kvm command to put the downloaded debian image in the previously created hard disk:
+
+       ex: kvm -m 1000 -hda debian-journet-sebastiani.qcow2 -cdrom image-debian.iso
+
+
+After that, we launch the virtual machine and configure it first:
+
+ex: kvm -m 1000 -hda debian-journet-sebastiani.qcow2 -net nic,macaddr=42:AA:AA:AA:AA:AA -net vde,sock=/var/run/vde2/kvmtap0.ctl -k fr
+
+(To make it easier to configure everything on the machine, we will connect with the root)
+
+
+To be sure to find the same machine with the right configurations to be able to resume later at the right place, we transfer a copy of our virtual machine on thorin:
+
+ex: scp debian-journet-sebastiani.qcow2 nom@thorin:debian-journet-sebastiani.qcow2
+
+
+Now to configure the phones and to be able to do the other objectives we need asterisk on the machine:
+apt-get install asterisk
