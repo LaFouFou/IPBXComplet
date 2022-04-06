@@ -1,9 +1,11 @@
 # IPBXComplet
 
+
+
 ## Summary
 
- - [Starting materials](#startint-materials)
- - [IP Addresses](#our-ip-addresses)
+ - [Starting materials](#starting-materials)
+ - [IP Addresses](#our-ip-adresses)
  - [Virtual machines configuration](#virtual-machines-configuration)
  - [Phones configuration](#phones-configuration)
 
@@ -72,18 +74,19 @@ ex:
 To be able to call with the phones we need to add an instruction to extensions.conf:
 
 We are looking for the line  [default] (with CTRL+W)
- exten => 501,1,Dial(SIP/gs2,42)
+       exten => 501,1,Dial(SIP/gs2,42)
 
 
 To be able to call then we need to go to the modules.conf file:
 
 We change the line: noload => chan_oss.so
-with : load => chan_oss.so
+with : 
+       load => chan_oss.so
 
 
 After setting up everything we go to the asterisk command:
-asterisk -rvvvvv
+       asterisk -rvvvvv
 
 
 Then we call our phone:
-    console dial NUMBER
+       console dial NUMBER
