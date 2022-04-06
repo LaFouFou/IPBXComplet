@@ -17,6 +17,7 @@ The goal is to strengthen communication between the employees or the people livi
  		- [Step 1](#step-1)
  		- [Step 2](#step-2)
  		- [Step 3](#step-3)
+  - [Demonstration video](#demonstration-video)
 
 ## Starting materials
 
@@ -189,3 +190,7 @@ On server B :  add in extension.conf :
 Check if B can call A, the terms 5XX permit to contact all the subscribers of server A with a phone number with 3 digits, and starting with 5.
 
 You have set-up a SIP Trunk, congratulations !!
+
+## Demonstration video
+
+https://www.youtube.com/watch?v=8gpY-QCpkOs
