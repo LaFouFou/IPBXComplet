@@ -10,7 +10,7 @@
  - [Phones configuration](#phones-configuration)
  - [About the SIP Trunk](#what-is-a-sip-trunk)
 
-### Starting materials :
+## Starting materials :
 
 We used two different phones for this project. 1 Aastra 6757i and 1 Grandstream GXV3140.
 
@@ -19,14 +19,14 @@ https://www.officeeasy.fr/aastra-6757i-reconditionne.html
 https://www.officeeasy.fr/grandstream-gxv3140.html
 
 
-#### Our IP Adresses
+## Our IP Adresses
 
 We initialize the IP Addresses of each phone such that:
      GrandStream: 10.33.105.127
      Aastra: 10.33.105.121
 
 
-##### Virtual machines configuration
+## Virtual machines configuration
 
 
 First step:
@@ -53,7 +53,7 @@ To be sure to find the same machine with the right configurations to be able to 
        ex: scp debian-journet-sebastiani.qcow2 nom@thorin:debian-journet-sebastiani.qcow2
 
 
-###### Phones configuration
+## Phones configuration
 
 Now to configure the phones and to be able to do the other objectives we need asterisk on the machine:
 apt-get install asterisk
@@ -104,7 +104,7 @@ You can also see the status of the communication channels by typing (still in as
     
        sip show peers
 
-####### What is a SIP trunk ? 
+## What is a SIP Trunk ?
 
 SIP, which stands for Session Initiation Protocol, is an IP standard established by the Internet Engineering Task Force (IETF). A standard essentially dictating how a communication session is established and how it is terminated, initiating the connection between IP addresses.
 
